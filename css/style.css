@@ -1490,8 +1490,7 @@ img {
   }
 }
 /* =========================================
-   MOBILE SIDE PADDING 10PX
-   На мобилке отступ от края всегда 10px
+   MOBILE SIDE PADDING 10PX + AUTO WIDTH
 ========================================= */
 
 @media (max-width: 768px) {
@@ -1636,5 +1635,247 @@ img {
 
   .hero-feature--infra p {
     top: 96px !important;
+  }
+}
+/* =========================================
+   MOBILE PROPORTIONAL AUTO ADAPTIVE
+   Отступ 10px от края + элементы крупнее
+========================================= */
+
+@media (max-width: 768px) {
+  :root {
+    /* 10px слева и справа, но не больше 420px */
+    --mobile-width: min(420px, calc(100vw - 20px));
+  }
+
+  .hero__content,
+  .hero-features,
+  .benefits,
+  .benefits__grid,
+  .presentation__box {
+    width: var(--mobile-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* ===== HERO ===== */
+
+  .hero h1 {
+    width: var(--mobile-width) !important;
+    font-size: clamp(27px, 7.5vw, 34px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero__subtitle-row {
+    width: var(--mobile-width) !important;
+  }
+
+  .hero__subtitle {
+    width: calc(var(--mobile-width) - 38px) !important;
+    font-size: clamp(12px, 3.7vw, 16px) !important;
+    line-height: 1.35 !important;
+  }
+
+  .hero__button {
+    width: var(--mobile-width) !important;
+    height: clamp(65px, 17.5vw, 82px) !important;
+    min-height: clamp(65px, 17.5vw, 82px) !important;
+  }
+
+  .hero__button span {
+    font-size: clamp(15px, 4.2vw, 18px) !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero__button small {
+    font-size: clamp(12px, 3.6vw, 16px) !important;
+  }
+
+  /* ===== 3 ПЛАШКИ ПЕРВОГО БЛОКА ===== */
+
+  .hero-features {
+    width: var(--mobile-width) !important;
+    height: clamp(468px, 122vw, 560px) !important;
+  }
+
+  .hero-features__base,
+  .hero-features__layer,
+  .hero-feature,
+  .hero-feature--beach,
+  .hero-feature--price,
+  .hero-feature--infra {
+    width: var(--mobile-width) !important;
+  }
+
+  .hero-features__base {
+    height: clamp(190px, 49vw, 230px) !important;
+  }
+
+  .hero-features__layer--middle {
+    top: clamp(152px, 39vw, 185px) !important;
+    height: clamp(190px, 49vw, 230px) !important;
+  }
+
+  .hero-features__layer--right {
+    top: clamp(303px, 78vw, 370px) !important;
+    height: clamp(165px, 43vw, 200px) !important;
+  }
+
+  .hero-feature--beach {
+    top: 0 !important;
+    height: clamp(190px, 49vw, 230px) !important;
+  }
+
+  .hero-feature--price {
+    top: clamp(152px, 39vw, 185px) !important;
+    height: clamp(190px, 49vw, 230px) !important;
+  }
+
+  .hero-feature--infra {
+    top: clamp(303px, 78vw, 370px) !important;
+    height: clamp(165px, 43vw, 200px) !important;
+  }
+
+  .hero-feature__icon,
+  .hero-feature--beach .hero-feature__icon,
+  .hero-feature--price .hero-feature__icon,
+  .hero-feature--infra .hero-feature__icon {
+    width: clamp(35px, 9.5vw, 43px) !important;
+    height: clamp(35px, 9.5vw, 43px) !important;
+    top: clamp(20px, 5.5vw, 26px) !important;
+  }
+
+  .hero-feature h2,
+  .hero-feature--beach h2,
+  .hero-feature--price h2,
+  .hero-feature--infra h2 {
+    top: clamp(65px, 17vw, 82px) !important;
+    width: calc(var(--mobile-width) - 60px) !important;
+    font-size: clamp(18px, 5.1vw, 23px) !important;
+    line-height: 1.18 !important;
+  }
+
+  .hero-feature p,
+  .hero-feature--beach p,
+  .hero-feature--price p,
+  .hero-feature--infra p {
+    width: calc(var(--mobile-width) - 55px) !important;
+    font-size: clamp(14px, 4vw, 17px) !important;
+    line-height: 1.42 !important;
+  }
+
+  .hero-feature--beach p {
+    top: clamp(112px, 29vw, 138px) !important;
+  }
+
+  .hero-feature--price p,
+  .hero-feature--infra p {
+    top: clamp(96px, 25vw, 122px) !important;
+  }
+
+  /* ===== КАРТОЧКИ ===== */
+
+  .benefits__title {
+    width: var(--mobile-width) !important;
+    font-size: clamp(25px, 6.6vw, 34px) !important;
+    line-height: 1.2 !important;
+  }
+
+  .benefit-card,
+  .benefit-card:nth-child(1),
+  .benefit-card:nth-child(2),
+  .benefit-card:nth-child(3),
+  .benefit-card:nth-child(4) {
+    width: var(--mobile-width) !important;
+    padding-bottom: clamp(28px, 7vw, 38px) !important;
+  }
+
+  .benefit-card__image {
+    width: calc(var(--mobile-width) - 20px) !important;
+    height: auto !important;
+    aspect-ratio: 280 / 170 !important;
+    margin-top: clamp(14px, 3.8vw, 20px) !important;
+  }
+
+  .benefit-card__check {
+    width: clamp(30px, 8vw, 38px) !important;
+    height: clamp(30px, 8vw, 38px) !important;
+  }
+
+  .benefit-card__check img {
+    width: clamp(30px, 8vw, 38px) !important;
+    height: clamp(30px, 8vw, 38px) !important;
+  }
+
+  .benefit-card::before {
+    width: clamp(64px, 17vw, 82px) !important;
+    height: clamp(64px, 17vw, 82px) !important;
+  }
+
+  .benefit-card h3,
+  .benefit-card:nth-child(1) h3,
+  .benefit-card:nth-child(2) h3,
+  .benefit-card:nth-child(3) h3,
+  .benefit-card:nth-child(4) h3 {
+    width: calc(var(--mobile-width) - 34px) !important;
+    max-width: none !important;
+    font-size: clamp(18px, 5.3vw, 25px) !important;
+    line-height: 1.16 !important;
+  }
+
+  .benefit-card p,
+  .benefit-card:nth-child(1) p,
+  .benefit-card:nth-child(2) p,
+  .benefit-card:nth-child(3) p,
+  .benefit-card:nth-child(4) p {
+    width: calc(var(--mobile-width) - 46px) !important;
+    max-width: none !important;
+    font-size: clamp(14px, 4vw, 18px) !important;
+    line-height: 1.42 !important;
+  }
+
+  /* ===== ФОРМА ===== */
+
+  .presentation__content {
+    width: var(--mobile-width) !important;
+  }
+
+  .presentation h2 {
+    width: calc(var(--mobile-width) - 30px) !important;
+    font-size: clamp(22px, 6.5vw, 31px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .presentation li {
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+  }
+
+  .lead-form,
+  .lead-form input,
+  .lead-form button {
+    width: calc(var(--mobile-width) - 30px) !important;
+  }
+
+  .lead-form input {
+    height: clamp(50px, 13vw, 60px) !important;
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+  }
+
+  .lead-form button {
+    height: clamp(75px, 19vw, 88px) !important;
+    min-height: clamp(75px, 19vw, 88px) !important;
+  }
+
+  .lead-form button span {
+    font-size: clamp(14px, 4vw, 17px) !important;
+  }
+
+  .lead-form button small {
+    font-size: clamp(12px, 3.5vw, 15px) !important;
+  }
+
+  .presentation__image {
+    width: var(--mobile-width) !important;
+    height: clamp(220px, 58vw, 300px) !important;
   }
 }

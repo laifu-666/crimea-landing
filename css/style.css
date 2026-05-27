@@ -1489,3 +1489,152 @@ img {
     background: #ffffff !important;
   }
 }
+/* =========================================
+   MOBILE SIDE PADDING 10PX
+   На мобилке отступ от края всегда 10px
+========================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --mobile-width: min(380px, calc(100vw - 20px));
+  }
+
+  .hero__content,
+  .hero-features,
+  .benefits,
+  .benefits__grid,
+  .presentation__box {
+    width: var(--mobile-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero__button {
+    width: var(--mobile-width) !important;
+  }
+
+  .benefit-card,
+  .benefit-card:nth-child(1),
+  .benefit-card:nth-child(2),
+  .benefit-card:nth-child(3),
+  .benefit-card:nth-child(4) {
+    width: var(--mobile-width) !important;
+  }
+
+  .benefit-card__image {
+    width: calc(var(--mobile-width) - 20px) !important;
+  }
+
+  .presentation__content {
+    width: var(--mobile-width) !important;
+  }
+
+  .lead-form,
+  .lead-form input,
+  .lead-form button {
+    width: calc(var(--mobile-width) - 30px) !important;
+  }
+
+  .presentation__image {
+    width: var(--mobile-width) !important;
+  }
+}
+/* =========================================
+   MOBILE HERO FEATURES AUTO WIDTH FIX
+   3 плашки: ширина 10px от края, но нормальная высота/геометрия
+========================================= */
+
+@media (max-width: 768px) {
+  .hero-features {
+    width: var(--mobile-width) !important;
+    height: 468px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-features__base,
+  .hero-features__layer {
+    width: var(--mobile-width) !important;
+    border-radius: 15px !important;
+    background: #ffffff !important;
+  }
+
+  .hero-features__base {
+    height: 190px !important;
+  }
+
+  .hero-features__layer--middle {
+    top: 152px !important;
+    height: 190px !important;
+  }
+
+  .hero-features__layer--right {
+    top: 303px !important;
+    height: 165px !important;
+  }
+
+  .hero-feature,
+  .hero-feature--beach,
+  .hero-feature--price,
+  .hero-feature--infra {
+    width: var(--mobile-width) !important;
+    left: 0 !important;
+  }
+
+  .hero-feature--beach {
+    top: 0 !important;
+    height: 190px !important;
+  }
+
+  .hero-feature--price {
+    top: 152px !important;
+    height: 190px !important;
+  }
+
+  .hero-feature--infra {
+    top: 303px !important;
+    height: 165px !important;
+  }
+
+  .hero-feature__icon,
+  .hero-feature--beach .hero-feature__icon,
+  .hero-feature--price .hero-feature__icon,
+  .hero-feature--infra .hero-feature__icon {
+    top: 20px !important;
+    left: 50% !important;
+    width: 35px !important;
+    height: 35px !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .hero-feature h2,
+  .hero-feature--beach h2,
+  .hero-feature--price h2,
+  .hero-feature--infra h2 {
+    top: 65px !important;
+    width: calc(var(--mobile-width) - 70px) !important;
+    font-size: clamp(18px, 4.8vw, 20px) !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-feature p,
+  .hero-feature--beach p,
+  .hero-feature--price p,
+  .hero-feature--infra p {
+    width: calc(var(--mobile-width) - 60px) !important;
+    font-size: clamp(14px, 3.7vw, 15px) !important;
+    line-height: 1.4 !important;
+  }
+
+  .hero-feature--beach p {
+    top: 112px !important;
+  }
+
+  .hero-feature--price p {
+    top: 96px !important;
+  }
+
+  .hero-feature--infra p {
+    top: 96px !important;
+  }
+}
